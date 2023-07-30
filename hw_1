@@ -1,0 +1,39 @@
+1.
+CREATE TABLE `myfirstdb`.`mobile_phones` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `product_name` VARCHAR(45) NULL,
+  `manufacturer` VARCHAR(45) NULL,
+  `product_count` INT NULL,
+  `price` INT NULL,
+  PRIMARY KEY (`id`));
+
+INSERT INTO `myfirstdb`.`mobile_phones` (`product_name`, `manufacturer`, `product_count`, `price`) VALUES ('iPhone X', 'Apple', '3', '76000');
+INSERT INTO `myfirstdb`.`mobile_phones` (`product_name`, `manufacturer`, `product_count`, `price`) VALUES ('iPhone 8', 'Apple', '2', '51000');
+INSERT INTO `myfirstdb`.`mobile_phones` (`product_name`, `manufacturer`, `product_count`, `price`) VALUES ('Galaxy S9', 'Samsung', '2', '56000');
+INSERT INTO `myfirstdb`.`mobile_phones` (`product_name`, `manufacturer`, `product_count`, `price`) VALUES ('Galaxy S8', 'Samsung', '1', '41000');
+INSERT INTO `myfirstdb`.`mobile_phones` (`product_name`, `manufacturer`, `product_count`, `price`) VALUES ('P20 Pro', 'Huawei', '5', '36000');
+
+2.
+SELECT product_name, manufacturer, price 
+FROM myfirstdb.mobile_phones
+where product_count > 2;
+
+3.
+SELECT * FROM myfirstdb.mobile_phones
+where manufacturer = 'Samsung';
+
+4.1.
+SELECT * FROM myfirstdb.mobile_phones
+where manufacturer LIKE '%iPhone%' or product_name LIKE '%iPhone%';
+
+4.2.
+SELECT * FROM myfirstdb.mobile_phones
+where manufacturer LIKE '%Samsung%' or product_name LIKE '%Samsung%';
+
+4.3.
+SELECT * FROM myfirstdb.mobile_phones
+where product_name REGEXP '[[:digit:]]';
+
+4.4.
+SELECT * FROM myfirstdb.mobile_phones
+where product_name LIKE '%8%';
