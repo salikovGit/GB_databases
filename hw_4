@@ -1,0 +1,5 @@
+# Task 1
+select count(*) from likes as l
+join profiles as p on l.user_id = p.user_id
+where year(now()) - year(p.birthday) < 12;
+
